@@ -1,20 +1,23 @@
 ---
-layout: default
+layout: index
 ---
 
 <div class="home">
 
-  <h1>Posts</h1>
+  {% for cat in site.category-list %}
+    <h2>{{ cat }}</h2>
+    <ul>
+    {% for page in site.pages %}
+      {% if page.resource == true %}
+        {% for pc in page.categories %}
+          {% if pc == cat %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endif %}   <!-- cat-match-p -->
+        {% endfor %}  <!-- page-category -->
+      {% endif %}   <!-- resource-p -->
+    {% endfor %} <!-- page -->
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </ul>
+  {% endfor %}  <!-- cat -->
 
 </div>

@@ -2,7 +2,8 @@
 layout: article
 title: Olapic Product Feed
 attribution: Jae
-categories: [feed]
+resource: true
+categories: [Resources]
 ---
 
 The following document will explain the product feed supported by **Olapic**.
@@ -62,6 +63,7 @@ You can build the `<Category>` elements using the following children elements:
 
 
 `Categories` node example:
+
 ```xml
 <Categories>
 	<Category>
@@ -78,6 +80,7 @@ You can build the `<Category>` elements using the following children elements:
 	</Category>
 </Categories>
 ```
+
 In this example the first `<Category>` (*My Demo Category*) is a root category, it has no parent category. But it has a sub-category called *My Demo Sub-Category*. We can tell this because the second `<Category>` element has as `CategoryParentID` the `CategoryUniqueID` of the first element.
 
 ### `<Product>` element
@@ -121,7 +124,9 @@ We want your organization to have full control of the streams, and in order to a
 | disabled | This is a bool you can use to disable products. If you set this to `true` then we will set the stream associated with this product as INACTIVE. Default: false. *Expected values: {true, false, 0, 1}* | No. |
 
 ### XML Feed Example
+
 The following is an example of a valid feed you can provide.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Feed>
@@ -176,6 +181,7 @@ The following is an example of a valid feed you can provide.
 	</Products>
 </Feed>
 ```
+
 It contains only two `<Product>` but typically your organization will include all the products you need. As you can see, the second product will be marked as `INACTIVE`.
 
 Also, the second Product has as parent product the first one, we can tell that because of `<ParentID>123456789</ParentID>`.

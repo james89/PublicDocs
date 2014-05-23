@@ -10,4 +10,4 @@ markdown: rdiscount
 permalink: none
 
 # Custom settings
-category-list: [articles, feed, checkout]
+category-list: [Resources]
