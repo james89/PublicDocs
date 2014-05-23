@@ -1,11 +1,9 @@
 ---
 layout: article
-title: Feed
+title: Olapic Product Feed
 attribution: Jae
 categories: [feed]
 ---
-
-# Olapic Product Feed
 
 The following document will explain the product feed supported by **Olapic**.
 
@@ -38,12 +36,13 @@ Here is an example:
 <?xml version="1.0" encoding="UTF-8"?>
 <Feed>
 	<Categories>
-				<Category>...</Category>
-		</Categories>
-		<Products>
-				<Product>...</Product>
-		</Products>
+		<Category>...</Category>
+	</Categories>
+	<Products>
+		<Product>...</Product>
+	</Products>
 </Feed>
+<xml>
 ```
 
 ### Product categorization
@@ -141,38 +140,39 @@ The following is an example of a valid feed you can provide.
 		</Category>
 	</Categories>
 	<Products>
-			<Product>
-				<Name>My Exmaple Product</Name>
-				<ProductUniqueID>123456789</ProductUniqueID>
-				<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
-				<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
-				<Description>This is an example description of my product</Description>
-				<CategoryID>cat-123</CategoryID>
-				<UPCs>
-					<UPC>001122334455</UPC>
-				</UPCs>
-				<Price>23.99</Price>
-				<Stock>15</Stock>
-				<Availability>true</Availability>
-				<Color>Red</Color>
-			</Product>
+		<Product>
+			<Name>My Exmaple Product</Name>
+			<ProductUniqueID>123456789</ProductUniqueID>
+			<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
+			<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
+			<Description>This is an example description of my product</Description>
+			<CategoryID>cat-123</CategoryID>
+			<UPCs>
+				<UPC>001122334455</UPC>
+			</UPCs>
+			<Price>23.99</Price>
+			<Stock>15</Stock>
+			<Availability>true</Availability>
+			<Color>Red</Color>
+		</Product>
 	</Products>
-	<Product disabled="true">
-				<Name>My New Product</Name>
-				<ProductUniqueID>123456221</ProductUniqueID>
-				<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
-				<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
-				<Description>This is an example description of my product</Description>
-				<CategoryID>cat-123</CategoryID>
-				<UPCs>
-					<UPC>001122334455</UPC>
-				</UPCs>
-				<Price>23.99</Price>
-				<Stock>15</Stock>
-				<Availability>true</Availability>
-				<Color>Green</Color>
-				<ParentID>123456789</ParentID>
-			</Product>
+	<Products disabled="true">
+		<Product>
+			<Name>My New Product</Name>
+			<ProductUniqueID>123456221</ProductUniqueID>
+			<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
+			<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
+			<Description>This is an example description of my product</Description>
+			<CategoryID>cat-123</CategoryID>
+			<UPCs>
+				<UPC>001122334455</UPC>
+			</UPCs>
+			<Price>23.99</Price>
+			<Stock>15</Stock>
+			<Availability>true</Availability>
+			<Color>Green</Color>
+			<ParentID>123456789</ParentID>
+		</Product>
 	</Products>
 </Feed>
 ```

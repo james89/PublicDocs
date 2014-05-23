@@ -1,12 +1,12 @@
 # Site settings
 title: Olapic Public Documentation
-email: jae@olapic.com
+email: support@olapic.com
 description: "This documentation contains all public documentation."
 baseurl: ""
 url: "http://olapic.com"
 
 # Build settings
-markdown: kramdown
+markdown: rdiscount
 permalink: none
 
 # Custom settings
