@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Olapic Product Feed
-attribution: -u
+attribution: Jae
 resource: true
 categories: [Resources]
 ---
