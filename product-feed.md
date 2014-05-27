@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Olapic Product Feed
-attribution: Jae
+attribution: 
 resource: true
 categories: [Resources]
 ---
@@ -220,4 +220,4 @@ If you plan on giving us a custom feed (existing vendor feeds that are not Olapi
 ## Changing the Product Feed
 Please note that if you want to change something in your product feed, we will have to be notified to make sure that the data schema does not break. Please contact your Integration Engineer if you have any changes to the feed scheduled.
 
-testing
+testing2
