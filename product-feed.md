@@ -188,12 +188,15 @@ Please, use the XML Schema Definition we have to validate your feed before sendi
 [XML Schema Definition for a valid Olapic Feed](http://photorank.me/olapicProductFeedV1_0.xsd)
 
 ***Important***
+
 Validate your feed before sending it to use. You can use the tool you want, but we encourage you to do a schema validation using our XSD file above. 
 
 Here some tools:
+
 * [CoreFiling](http://www.corefiling.com/opensource/schemaValidate.html) is an online tool that will ask your XML file and the XSD file (that you can download form above). 
 * [XML Validation](http://www.xmlvalidation.com/) is an online tool that will ask you first to paste you XML code or upload it and then you must use the checkbox *"Validate against external XML schema"* and click *"validate"* to go to the next page were you'll be asked to paste your XSD or upload it.
 * xmllint (Command Line): you likely already have xmllint installed, which can do validation. At a terminal type: 
+
 ```shell
 xmllint -noout --schema olapicProductFeedV1_0.xsd my_company_feed.xml
 ```
