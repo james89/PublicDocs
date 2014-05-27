@@ -63,6 +63,7 @@ You can build the `<Category>` elements using the following children elements:
 
 
 `Categories` node example:
+
 ```xml
 <Categories>
 	<Category>
@@ -79,6 +80,7 @@ You can build the `<Category>` elements using the following children elements:
 	</Category>
 </Categories>
 ```
+
 In this example the first `<Category>` (*My Demo Category*) is a root category, it has no parent category. But it has a sub-category called *My Demo Sub-Category*. We can tell this because the second `<Category>` element has as `CategoryParentID` the `CategoryUniqueID` of the first element.
 
 ### `<Product>` element
@@ -123,6 +125,7 @@ We want your organization to have full control of the streams, and in order to a
 
 ### XML Feed Example
 The following is an example of a valid feed you can provide.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Feed>
