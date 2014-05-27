@@ -1,10 +1,11 @@
 ---
 layout: article
 title: Olapic Product Feed
-attribution: Jae
+attribution: 
 resource: true
 categories: [Resources]
 ---
+
 
 The following document will explain the product feed supported by **Olapic**.
 
@@ -37,13 +38,12 @@ Here is an example:
 <?xml version="1.0" encoding="UTF-8"?>
 <Feed>
 	<Categories>
-		<Category>...</Category>
-	</Categories>
-	<Products>
-		<Product>...</Product>
-	</Products>
+				<Category>...</Category>
+		</Categories>
+		<Products>
+				<Product>...</Product>
+		</Products>
 </Feed>
-<xml>
 ```
 
 ### Product categorization
@@ -63,7 +63,6 @@ You can build the `<Category>` elements using the following children elements:
 
 
 `Categories` node example:
-
 ```xml
 <Categories>
 	<Category>
@@ -80,7 +79,6 @@ You can build the `<Category>` elements using the following children elements:
 	</Category>
 </Categories>
 ```
-
 In this example the first `<Category>` (*My Demo Category*) is a root category, it has no parent category. But it has a sub-category called *My Demo Sub-Category*. We can tell this because the second `<Category>` element has as `CategoryParentID` the `CategoryUniqueID` of the first element.
 
 ### `<Product>` element
@@ -124,9 +122,7 @@ We want your organization to have full control of the streams, and in order to a
 | disabled | This is a bool you can use to disable products. If you set this to `true` then we will set the stream associated with this product as INACTIVE. Default: false. *Expected values: {true, false, 0, 1}* | No. |
 
 ### XML Feed Example
-
 The following is an example of a valid feed you can provide.
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Feed>
@@ -145,43 +141,41 @@ The following is an example of a valid feed you can provide.
 		</Category>
 	</Categories>
 	<Products>
-		<Product>
-			<Name>My Exmaple Product</Name>
-			<ProductUniqueID>123456789</ProductUniqueID>
-			<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
-			<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
-			<Description>This is an example description of my product</Description>
-			<CategoryID>cat-123</CategoryID>
-			<UPCs>
-				<UPC>001122334455</UPC>
-			</UPCs>
-			<Price>23.99</Price>
-			<Stock>15</Stock>
-			<Availability>true</Availability>
-			<Color>Red</Color>
-		</Product>
+			<Product>
+				<Name>My Exmaple Product</Name>
+				<ProductUniqueID>123456789</ProductUniqueID>
+				<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
+				<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
+				<Description>This is an example description of my product</Description>
+				<CategoryID>cat-123</CategoryID>
+				<UPCs>
+					<UPC>001122334455</UPC>
+				</UPCs>
+				<Price>23.99</Price>
+				<Stock>15</Stock>
+				<Availability>true</Availability>
+				<Color>Red</Color>
+			</Product>
 	</Products>
-	<Products disabled="true">
-		<Product>
-			<Name>My New Product</Name>
-			<ProductUniqueID>123456221</ProductUniqueID>
-			<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
-			<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
-			<Description>This is an example description of my product</Description>
-			<CategoryID>cat-123</CategoryID>
-			<UPCs>
-				<UPC>001122334455</UPC>
-			</UPCs>
-			<Price>23.99</Price>
-			<Stock>15</Stock>
-			<Availability>true</Availability>
-			<Color>Green</Color>
-			<ParentID>123456789</ParentID>
-		</Product>
+	<Product disabled="true">
+				<Name>My New Product</Name>
+				<ProductUniqueID>123456221</ProductUniqueID>
+				<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
+				<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
+				<Description>This is an example description of my product</Description>
+				<CategoryID>cat-123</CategoryID>
+				<UPCs>
+					<UPC>001122334455</UPC>
+				</UPCs>
+				<Price>23.99</Price>
+				<Stock>15</Stock>
+				<Availability>true</Availability>
+				<Color>Green</Color>
+				<ParentID>123456789</ParentID>
+			</Product>
 	</Products>
 </Feed>
 ```
-
 It contains only two `<Product>` but typically your organization will include all the products you need. As you can see, the second product will be marked as `INACTIVE`.
 
 Also, the second Product has as parent product the first one, we can tell that because of `<ParentID>123456789</ParentID>`.
@@ -194,11 +188,9 @@ Please, use the XML Schema Definition we have to validate your feed before sendi
 [XML Schema Definition for a valid Olapic Feed](http://photorank.me/olapicProductFeedV1_0.xsd)
 
 ***Important***
-
 Validate your feed before sending it to use. You can use the tool you want, but we encourage you to do a schema validation using our XSD file above. 
 
 Here some tools:
-
 * [CoreFiling](http://www.corefiling.com/opensource/schemaValidate.html) is an online tool that will ask your XML file and the XSD file (that you can download form above). 
 * [XML Validation](http://www.xmlvalidation.com/) is an online tool that will ask you first to paste you XML code or upload it and then you must use the checkbox *"Validate against external XML schema"* and click *"validate"* to go to the next page were you'll be asked to paste your XSD or upload it.
 * xmllint (Command Line): you likely already have xmllint installed, which can do validation. At a terminal type: 
