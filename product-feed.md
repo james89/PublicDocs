@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Olapic Product Feed
-attribution: Jae Han Kim
+attribution: jae
 resource: true
 categories: [Resources]
 ---
