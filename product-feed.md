@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Olapic Product Feed
-attribution: jae
+attribution: 
 resource: true
 categories: [Resources]
 ---
@@ -56,10 +56,10 @@ You can build the `<Category>` elements using the following children elements:
 
 | Element Name | Description | Required |
 |--------------|-------------|----------|
-| Name | The visible name of the category. | YES |
-| CategoryUniqueID | A unique ID for the category. | Only if you use *category_based* widget |
+| Name | The visible name of the category. | **Yes** |
+| CategoryUniqueID | A unique ID for the category. <br>**Note: The value of this element can not be empty or contain white spaces.** | **Yes** |
 | CategoryUrl | A URL where visitors can shop by this category, if you have one. | Only if you use our *category_based* widget |
-| CategoryParentID | This is to support sub-category levels. If this category is not a root category and, instead, it's a sub-category of another category, all you need to do is give us that CagetoryUniqueID here. We do the rest! | Only if you need sub-category support |
+| CategoryParentID | This is to support sub-category levels. If the category is a sub-category with a specific parent category, please use the parent category's CategoryUniqueID within this element | Only if you need sub-category support |
 
 
 `Categories` node example:
@@ -81,28 +81,28 @@ You can build the `<Category>` elements using the following children elements:
 </Categories>
 ```
 
-In this example the first `<Category>` (*My Demo Category*) is a root category, it has no parent category. But it has a sub-category called *My Demo Sub-Category*. We can tell this because the second `<Category>` element has as `CategoryParentID` the `CategoryUniqueID` of the first element.
+In this example, the first `<Category>` (*My Demo Category*) is a root category, and it has no parent category. However, it has a sub-category called *My Demo Sub-Category*. This is observed in the second `<Category>` element, which includes `CategoryParentID` element with the value as `CategoryUniqueID` of the first element.
 
 ### `<Product>` element
 
-`<Product>` will define product stream you want to import to Olapic. Basically, we will create a `stream` entity for every `<Product>` element.
+`<Product>` will define product stream you want to import to Olapic. In essence, we will create a `stream` entity for every `<Product>` element.
 
-Here is a list of possible elements you can use under `<Product>` (please note that some of these elements are required):
+Here is a list of possible elements you can use under `<Product>`. Please pay attention to the required elements:
 
 | Element Name | Description | Required |
 |--------------|-------------|----------|
-| Name | The visible name of the product in your PDP.| YES |
-| ProductUniqueID | This is the unique identifier of the product. We treat this as an *unique* key and your organization will use it to call our widgets in your PDP. | YES |
-| ProductUrl | This is the URL we use when you click "Shop this look" in an Olapic viewer. This must take the visitor to a page to purchase the item | YES |
-| ImageUrl | This is the URL of the product primery image. The image that most represents your product in your PDP | YES |
-| Description | This is a short and plain text description of the product. We use this in your Olapic Admin page, your visitors will not see it. *No HTML elements are recognized in this element*. | NO |
-| CategoryID | This is the unique identifier of the category related with this product. We use this in the *category_based* Widget. ***The value here should match the *CategoryUniqueID* of a `<Category>` element.*** | Only if you use our *category_based* widget |
+| Name | The visible name of the product in your PDP.| **Yes** |
+| ProductUniqueID | This is the unique identifier of the product. We treat this as an *unique* key and your organization will use it to call our widgets in your PDP. ***Note: The value of this element can not be empty or contain white spaces.***| **Yes** |
+| ProductUrl | This is the URL we use when you click "Shop this look" in an Olapic viewer. This must take the visitor to a page to purchase the item | **Yes** |
+| ImageUrl | This is the URL of the product primery image. The image that most represents your product in your PDP | **Yes** |
+| Description | This is a short and plain text description of the product. We use this in your Olapic Admin page, your visitors will not see it. *No HTML elements are recognized in this element*. | No |
+| CategoryID | This is the unique identifier of the category related with this product. We use this in the *category_based* Widget. <br>**Note: The value here should match the `CategoryUniqueID` of the associated `<Category>` element.** | Only if you use our *category_based* widget |
 | CategoriesID | Contains at least one `<CategoryID>` element. | Only if you have multiples categories associated with this product |
-| EAN | European Article Number, which is used world wide for marking retail goods. Can be a string of digits either 8 or 13 characters long. | NO |
+| EAN | European Article Number, which is used world wide for marking retail goods. Can be a string of digits either 8 or 13 characters long. | No |
 | EANs | Contains at least one `<EAN>` element. | Only if you use `<EAN>` elements or *syndication* |
-| UPC | Universal Product Code, which is the 6 - or 12- digit bar code used for standard retail packaging in the United States. The UPC must contain numerals only, with no letters or characters. Further, spaces and hyphens disrupt ***syndication*** matching and must be removed. | NO |
+| UPC | Universal Product Code, which is the 6 - or 12- digit bar code used for standard retail packaging in the United States. The UPC must contain numerals only, with no letters or characters. Further, spaces and hyphens disrupt ***syndication*** matching and must be removed. | No |
 | UPCs | Contains at least one `<UPC>` element. | Only if you use `<UPC>` elements or *syndication* |
-| ISBN | International Standard Book Number, which is a unique identifier for books and which is intended for commercial use. The number is either 10 or 13 digits long and consists of four or five parts. The different sections of the number can be of different lengths and are usually separated by hyphens (-) or tildes (~). Spaces and hyphens disrupt ***syndication*** matching and must be removed. | NO |
+| ISBN | International Standard Book Number, which is a unique identifier for books and which is intended for commercial use. The number is either 10 or 13 digits long and consists of four or five parts. The different sections of the number can be of different lengths and are usually separated by hyphens (-) or tildes (~). Spaces and hyphens disrupt ***syndication*** matching and must be removed. | No |
 | ISBNs | Contains at least one `<ISBNs>` element. | Only if you use `<ISBN>` elements or *syndication* |
 | Price | This is the most significative price your visitor can see in you PDP. *Do NOT include the currency*. Only include the number with decimals separeted by '.'. Example: 23.99 | No |
 | Stock | This is an integer that represents your stock of this product | No |
@@ -121,7 +121,7 @@ We want your organization to have full control of the streams, and in order to a
 | Attribute Name | Description | Required |
 |--------------|-------------|----------|
 | removed | This is a bool you can use to remove products. If you set this to `true` then we will remove the stream associated with this product. Default: false. *Expected values: {true, false, 0, 1}* | No |
-| disabled | This is a bool you can use to disable products. If you set this to `true` then we will set the stream associated with this product as INACTIVE. Default: false. *Expected values: {true, false, 0, 1}* | No. |
+| disabled | This is a bool you can use to disable products. If you set this to `true` then we will set the stream associated with this product as INACTIVE. Default: false. *Expected values: {true, false, 0, 1}* | No |
 
 ### XML Feed Example
 The following is an example of a valid feed you can provide.
@@ -190,15 +190,13 @@ Please, use the XML Schema Definition we have to validate your feed before sendi
 
 [XML Schema Definition for a valid Olapic Feed](http://photorank.me/olapicProductFeedV1_0.xsd)
 
-***Important***
-
-Validate your feed before sending it to use. You can use the tool you want, but we encourage you to do a schema validation using our XSD file above. 
+**Important Note:** Please validate your feed before sending it over. You can use any tool you want to validate the feed, but we encourage you to do a schema validation using our XSD file above to make sure everything lines up correctly.
 
 Here some tools:
 
-* [CoreFiling](http://www.corefiling.com/opensource/schemaValidate.html) is an online tool that will ask your XML file and the XSD file (that you can download form above). 
+* [CoreFiling](http://www.corefiling.com/opensource/schemaValidate.html) is an online tool that will ask your XML file and the XSD file (that you can download form above).
 * [XML Validation](http://www.xmlvalidation.com/) is an online tool that will ask you first to paste you XML code or upload it and then you must use the checkbox *"Validate against external XML schema"* and click *"validate"* to go to the next page were you'll be asked to paste your XSD or upload it.
-* xmllint (Command Line): you likely already have xmllint installed, which can do validation. At a terminal type: 
+* xmllint (Command Line): you likely have xmllint installed on your machine, which can handle validation. In your terminal, type the following command:
 
 ```shell
 xmllint -noout --schema olapicProductFeedV1_0.xsd my_company_feed.xml
@@ -218,7 +216,7 @@ We encourage you to update it daily.
 ## Providing a custom Product Feed
 If you plan on giving us a custom feed (existing vendor feeds that are not Olapic specific), please be aware of the following:
 
-* Please keep in mind that some of the product features provided by Olapic **may not** be available on Olapic using a custom feed. Specific parts of Olapic feed schema pertains to product features such as syndication, inventory updates, configurable/simple products, etc (not limited to the features mentioned). 
+* Please keep in mind that some of the product features provided by Olapic **may not** be available on Olapic using a custom feed. Specific parts of Olapic feed schema pertains to product features such as syndication, inventory updates, configurable/simple products, etc (not limited to the features mentioned).
 * It must be in a XML, otherwise it can take 10 or more days to process it and we can't guarantee a correct data import. That's why we work with open and stable standards.
 * We require the fields listed as **required**. You can rename them, but they are essential for a good implementation.
 * We cannot guarantee a successful import with custom feeds.
