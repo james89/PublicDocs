@@ -176,7 +176,7 @@ pre {
 .markdown-body {
   font-size: 15px;
   line-height: 1.7;
-  overflow: hidden;
+  /*overflow: hidden;*/ /*comment out for anchor deeplinking*/
   word-wrap: break-word;
 }
 
