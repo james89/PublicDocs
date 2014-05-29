@@ -13,9 +13,9 @@ Once implemented, Olapic will be able to grab the information related to each of
 
 The checkout pixel should be implemented on the order confirmation page after the user checkout (explicitly, after the user has submitted the order to be processed).
 
-## Example code:
+Example code:
 
-```html
+```
 <!-- Photorank advanced checkout code -->
 <script type="text/javascript" data="olapic-checkout">
 	var olapicProducts = '';
