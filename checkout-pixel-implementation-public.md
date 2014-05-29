@@ -15,7 +15,7 @@ The checkout pixel should be implemented on the order confirmation page after th
 
 ## Example code:
 
-```markup
+```html
 <!-- Photorank advanced checkout code -->
 <script type="text/javascript" data="olapic-checkout">
 	var olapicProducts = '';
