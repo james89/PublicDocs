@@ -15,31 +15,32 @@ The checkout pixel should be implemented on the order confirmation page after th
 
 Example code:
 
-	<!-- Photorank advanced checkout code -->
-	<script type="text/javascript" data="olapic-checkout">
-		var olapicProducts = '';
-	
-		// Product loop starts. This is where you will store each product purchased info
-		olapicProducts += ((olapicProducts === '') ? '' : ',' ) +  '{"id":"'+encodeURIComponent("PRODUCT_ID")+'","price":"'+encodeURIComponent("PRODUCT_PRICE")+'"}';
-		// Product loop ends.
-	
-		window.onload = function() {
-			;(function(w, d){
-				olapicProducts = '['+olapicProducts+']';
-				var olapicCheckout = d.createElement("script"); olapicCheckout.async = true;
-				olapicCheckout.setAttribute("olapicProducts", olapicProducts);
-				olapicCheckout.setAttribute("olapicApiKey", encodeURIComponent("UNIQUE_OLAPIC_API_KEY"));
-				olapicCheckout.setAttribute("olapicIdentifier", encodeURIComponent("USER_ID"));
-				olapicCheckout.setAttribute("olapicAmount", encodeURIComponent("AMOUNT"));
-				olapicCheckout.setAttribute("olapicTransactionId", encodeURIComponent("TRANSACTION_ID"));
-				olapicCheckout.setAttribute("olapicEmail", encodeURIComponent("EMAIL"));
-				olapicCheckout.setAttribute("olapicName", encodeURIComponent("NAME"));
-				olapicCheckout.src="//www.photorank.me/static/js/olapic.checkout.js";
-				d.body.appendChild(olapicCheckout);
-			})(window, document);
-		}
-	</script>
+```
+<!-- Photorank advanced checkout code -->
+<script type="text/javascript" data="olapic-checkout">
+	var olapicProducts = '';
 
+	// Product loop starts. This is where you will store each product purchased info
+	olapicProducts += ((olapicProducts === '') ? '' : ',' ) +  '{"id":"'+encodeURIComponent("PRODUCT_ID")+'","price":"'+encodeURIComponent("PRODUCT_PRICE")+'"}';
+	// Product loop ends.
+
+	window.onload = function() {
+		;(function(w, d){
+			olapicProducts = '['+olapicProducts+']';
+			var olapicCheckout = d.createElement("script"); olapicCheckout.async = true;
+			olapicCheckout.setAttribute("olapicProducts", olapicProducts);
+			olapicCheckout.setAttribute("olapicApiKey", encodeURIComponent("UNIQUE_OLAPIC_API_KEY"));
+			olapicCheckout.setAttribute("olapicIdentifier", encodeURIComponent("USER_ID"));
+			olapicCheckout.setAttribute("olapicAmount", encodeURIComponent("AMOUNT"));
+			olapicCheckout.setAttribute("olapicTransactionId", encodeURIComponent("TRANSACTION_ID"));
+			olapicCheckout.setAttribute("olapicEmail", encodeURIComponent("EMAIL"));
+			olapicCheckout.setAttribute("olapicName", encodeURIComponent("NAME"));
+			olapicCheckout.src="//www.photorank.me/static/js/olapic.checkout.js";
+			d.body.appendChild(olapicCheckout);
+		})(window, document);
+	}
+</script>
+```
 
 ## Instructions:
 
