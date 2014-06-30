@@ -70,7 +70,6 @@ You can build the `<Category>` elements using the following children elements:
 		<CategoryUniqueID>cat-111</CategoryUniqueID>
 		<Name>My Demo Category</Name>
 		<CategoryUrl>http://www.demoshop.com/cotegories/cat-111</CategoryUrl>
-		<CategoryParentID></CategoryParentID>
 	</Category>
 	<Category>
 		<CategoryUniqueID>cat-123</CategoryUniqueID>
@@ -134,7 +133,6 @@ The following is an example of a valid feed you can provide.
 			<CategoryUniqueID>cat-111</CategoryUniqueID>
 			<Name>My Demo Category</Name>
 			<CategoryUrl>http://www.demoshop.com/cotegories/cat-111</CategoryUrl>
-			<CategoryParentID></CategoryParentID>
 		</Category>
 		<Category>
 			<CategoryUniqueID>cat-123</CategoryUniqueID>
