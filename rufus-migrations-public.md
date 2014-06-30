@@ -46,8 +46,7 @@ That being said, we have developed a migration plan so that there will be zero d
 1. We hand over new widget instance codes to your developer with instructions to be copy and pasted into your staging environment *.
 2. After these are implemented we begin development, which will typically take about **five business days** **.
 3. After a thorough QA on our side, you can now view the widgets and make sure they meet the expected specification.
-4. After you sign off on the development work, we will hand you new widget codes that reference your live account and product feed to be implemented in staging.
-5. Push the staging widgets to your live environment.
+4. Push the staging widgets to your live environment.
 
 \* ***Note:*** If you are currently using a CSV as a product feed we will need to upgrade you to an XML. This preferably will be in our official Olapic schema found here: [http://olapic.github.io/PublicDocs/product-feed.html](). If this particular schema can't be achieved we can do a custom feed, however it still must be XML format and we cannot guarantee the same consistency of import when done in this manner.</em>
 
