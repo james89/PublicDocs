@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Resource moved
+title: Article moved
 attribution: 
 resource: false
 categories: [Resources]
