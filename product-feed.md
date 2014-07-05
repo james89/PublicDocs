@@ -196,7 +196,7 @@ Here some tools:
 * [XML Validation](http://www.xmlvalidation.com/) is an online tool that will ask you first to paste you XML code or upload it and then you must use the checkbox *"Validate against external XML schema"* and click *"validate"* to go to the next page were you'll be asked to paste your XSD or upload it.
 * xmllint (Command Line): you likely have xmllint installed on your machine, which can handle validation. In your terminal, type the following command:
 
-```shell
+```sh
 xmllint -noout --schema olapicProductFeedV1_0.xsd my_company_feed.xml
 ```
 
