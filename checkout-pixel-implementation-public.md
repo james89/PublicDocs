@@ -50,13 +50,13 @@ Example code:
 
 	Please refer to the product loop using PHP as an example below:
 
-	```markup
-    <?php
-    foreach ($products as $product => $price) {
-        echo "olapicProducts += ((olapicProducts === '') ? '' : ',' ) +  '{\"id\":\"'+encodeURIComponent(\"$product\")+'\",\"price\":\"'+encodeURIComponent(\"$price\")+'\"}';"
-    }
-    ?>
-    ```
+	```php
+	<?php
+	foreach ($products as $product => $price) {
+		echo "olapicProducts += ((olapicProducts === '') ? '' : ',' ) +  '{\"id\":\"'+encodeURIComponent(\"$product\")+'\",\"price\":\"'+encodeURIComponent(\"$price\")+'\"}';"
+	}
+	?>
+	```
     
 3. Swap out the variables with each of the appropriate variables from your site.
 
