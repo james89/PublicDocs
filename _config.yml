@@ -6,8 +6,8 @@ baseurl: "/PublicDocs"
 url: "http://olapic.com"
 
 # Build settings
-markdown: rdiscount
-rdiscount: 
+markdown: redcarpet
+redcarpet: 
   fenced_code_blocks: true
 
 permalink: none
