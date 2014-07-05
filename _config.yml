@@ -7,6 +7,9 @@ url: "http://olapic.com"
 
 # Build settings
 markdown: rdiscount
+rdiscount: 
+  fenced_code_blocks: true
+
 permalink: none
 
 # Custom settings
