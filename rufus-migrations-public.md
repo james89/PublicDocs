@@ -7,7 +7,7 @@ resource: false
 
 Sorry! The requested article has been relocated. 
 
-Redirecting you to <a href="./product-feed-full-public.html">Olapic Product Feed</a> in <span id="countdown">5</span> seconds...
+Redirecting you to <a href="./product-feed-full-public.html">Migrating to RUFUS widget framework</a> in <span id="countdown">5</span> seconds...
 
 <script>
 (function () {
@@ -25,5 +25,5 @@ Redirecting you to <a href="./product-feed-full-public.html">Olapic Product Feed
 	cinterval = setInterval(timeDec, 1000);
 })();
 
-setTimeout(function(){window.location.href='./product-feed-full-public.html'},5000);
+setTimeout(function(){window.location.href='https://olapic1.zendesk.com/hc/en-us/articles/202450304'},5000);
 </script>
