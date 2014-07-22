@@ -32,17 +32,19 @@ To start, we only support `UTF-8` encoding, so your XML feed must start with the
 
 As this will be an XML file, we will need a root node. We will use `<Feed>` as the root node as default. Inside the `<Feed>` node, we will have `<Products>` node with children nodes called `<Product>`.
 
-Here is an example:
+Here is an example of the general schema:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Feed>
 	<Categories>
-				<Category>...</Category>
-		</Categories>
-		<Products>
-				<Product>...</Product>
-		</Products>
+		<Category>...</Category>
+		<Category>...</Category>
+	</Categories>
+	<Products>
+		<Product>...</Product>
+		<Product>...</Product>
+	</Products>
 </Feed>
 ```
 
@@ -67,15 +69,15 @@ You can build the `<Category>` elements using the following children elements:
 ```xml
 <Categories>
 	<Category>
-		<CategoryUniqueID>cat-111</CategoryUniqueID>
-		<Name>My Demo Category</Name>
-		<CategoryUrl>http://www.demoshop.com/cotegories/cat-111</CategoryUrl>
+		<CategoryUniqueID>cat1001</CategoryUniqueID>
+		<Name>Men's</Name>
+		<CategoryUrl>http://www.myawesomestore.com/categories/mens</CategoryUrl>
 	</Category>
 	<Category>
-		<CategoryUniqueID>cat-123</CategoryUniqueID>
-		<Name>My Demo Sub-Category</Name>
-		<CategoryUrl>http://www.demoshop.com/cotegories/cat-123</CategoryUrl>
-		<CategoryParentID>cat-111</CategoryParentID>
+		<CategoryUniqueID>cat1002</CategoryUniqueID>
+		<Name>T-shirts</Name>
+		<CategoryUrl>http://www.myawesomestore.com/categories/mens/tshirts</CategoryUrl>
+		<CategoryParentID>cat1001</CategoryParentID>
 	</Category>
 </Categories>
 ```
@@ -130,61 +132,140 @@ The following is an example of a valid feed you can provide.
 <Feed>
 	<Categories>
 		<Category>
-			<CategoryUniqueID>cat-111</CategoryUniqueID>
-			<Name>My Demo Category</Name>
-			<CategoryUrl>http://www.demoshop.com/cotegories/cat-111</CategoryUrl>
+			<CategoryUniqueID>cat1001</CategoryUniqueID>
+			<Name>Men's</Name>
+			<CategoryUrl>http://www.myawesomestore.com/categories/mens</CategoryUrl>
 		</Category>
 		<Category>
-			<CategoryUniqueID>cat-123</CategoryUniqueID>
-			<Name>My Demo Sub-Category</Name>
-			<CategoryUrl>http://www.demoshop.com/cotegories/cat-123</CategoryUrl>
-			<CategoryParentID>cat-111</CategoryParentID>
+			<CategoryUniqueID>cat1002</CategoryUniqueID>
+			<Name>T-shirts</Name>
+			<CategoryUrl>http://www.myawesomestore.com/categories/mens/tshirts</CategoryUrl>
+			<CategoryParentID>cat1001</CategoryParentID>
 		</Category>
 	</Categories>
 	<Products>
 			<Product>
-				<Name>My Exmaple Product</Name>
-				<ProductUniqueID>123456789</ProductUniqueID>
-				<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
-				<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
-				<Description>This is an example description of my product</Description>
-				<CategoryID>cat-123</CategoryID>
+				<Name>Awesome Possum T-shirt</Name>
+				<ProductUniqueID>APTS</ProductUniqueID>
+				<ProductUrl>http://www.myawesomestore.com/products/APTS</ProductUrl>
+				<ImageUrl>http://www.myawesomestore.com/images/APTS-mainstockimage.jpg</ImageUrl>
+				<Description>This is an example description of my Awesome Possum T-shirt</Description>
+				<CategoryID>cat1002</CategoryID>
 				<UPCs>
-					<UPC>001122334455</UPC>
+					<UPC>001122334451</UPC>
+					<UPC>001122334452</UPC>
+					<UPC>001122334453</UPC>
+					<UPC>001122334461</UPC>
+					<UPC>001122334462</UPC>
+					<UPC>001122334463</UPC>
+					<UPC>001122334471</UPC>
+					<UPC>001122334472</UPC>
+					<UPC>001122334473</UPC>
+					<UPC>001122334481</UPC>
+					<UPC>001122334482</UPC>
+					<UPC>001122334483</UPC>
 				</UPCs>
 				<Price>23.99</Price>
 				<Stock>15</Stock>
+				<Availability>true</Availability>
+			</Product>
+			<Product>
+				<Name>Awesome Possum T-shirt</Name>
+				<ProductUniqueID>APTS-01</ProductUniqueID>
+				<ProductUrl>http://www.myawesomestore.com/products/APTS?color=01</ProductUrl>
+				<ImageUrl>http://www.myawesomestore.com/images/APTS-black.jpg</ImageUrl>
+				<Description>This is an example description of my Awesome Possum T-shirt</Description>
+				<CategoryID>cat1002</CategoryID>
+				<UPCs>
+					<UPC>001122334451</UPC>
+					<UPC>001122334452</UPC>
+					<UPC>001122334453</UPC>
+				</UPCs>
+				<Price>23.99</Price>
+				<Stock>5</Stock>
+				<Availability>true</Availability>
+				<Color>Black</Color>
+				<ParentID>APTS</ParentID>
+			</Product>
+			<Product>
+				<Name>Awesome Possum T-shirt</Name>
+				<ProductUniqueID>APTS-02</ProductUniqueID>
+				<ProductUrl>http://www.myawesomestore.com/products/APTS?color=02</ProductUrl>
+				<ImageUrl>http://www.myawesomestore.com/images/APTS-blue.jpg</ImageUrl>
+				<Description>This is an example description of my Awesome Possum T-shirt</Description>
+				<CategoryID>cat1002</CategoryID>
+				<UPCs>
+					<UPC>001122334461</UPC>
+					<UPC>001122334462</UPC>
+					<UPC>001122334463</UPC>
+				</UPCs>
+				<Price>23.99</Price>
+				<Stock>5</Stock>
+				<Availability>true</Availability>
+				<Color>Blue</Color>
+				<ParentID>APTS</ParentID>
+			</Product>
+			<Product>
+				<Name>Awesome Possum T-shirt</Name>
+				<ProductUniqueID>APTS-03</ProductUniqueID>
+				<ProductUrl>http://www.myawesomestore.com/products/APTS?color=03</ProductUrl>
+				<ImageUrl>http://www.myawesomestore.com/images/APTS-red.jpg</ImageUrl>
+				<Description>This is an example description of my Awesome Possum T-shirt</Description>
+				<CategoryID>cat1002</CategoryID>
+				<UPCs>
+					<UPC>001122334471</UPC>
+					<UPC>001122334472</UPC>
+					<UPC>001122334473</UPC>
+				</UPCs>
+				<Price>23.99</Price>
+				<Stock>5</Stock>
 				<Availability>true</Availability>
 				<Color>Red</Color>
+				<ParentID>APTS</ParentID>
 			</Product>
-	</Products>
-	<Product disabled="true">
-				<Name>My New Product</Name>
-				<ProductUniqueID>123456221</ProductUniqueID>
-				<ProductUrl>http://www.demoshop.com/products/123456789</ProductUrl>
-				<ImageUrl>http://www.demoshop.com/images/product-image-123456789.jpg</ImageUrl>
-				<Description>This is an example description of my product</Description>
-				<CategoryID>cat-123</CategoryID>
+			<Product disabled="true">
+				<Name>Awesome Possum T-shirt</Name>
+				<ProductUniqueID>APTS-03</ProductUniqueID>
+				<ProductUrl>http://www.myawesomestore.com/products/APTS?color=04</ProductUrl>
+				<ImageUrl>http://www.myawesomestore.com/images/APTS-red.jpg</ImageUrl>
+				<Description>This is an example description of my Awesome Possum T-shirt</Description>
+				<CategoryID>cat1002</CategoryID>
 				<UPCs>
-					<UPC>001122334455</UPC>
+					<UPC>001122334481</UPC>
+					<UPC>001122334482</UPC>
+					<UPC>001122334483</UPC>
 				</UPCs>
 				<Price>23.99</Price>
-				<Stock>15</Stock>
-				<Availability>true</Availability>
+				<Stock>0</Stock>
+				<Availability>false</Availability>
 				<Color>Green</Color>
-				<ParentID>123456789</ParentID>
+				<ParentID>APTS</ParentID>
 			</Product>
 	</Products>
 </Feed>
 ```
-It contains only two `<Product>` but typically your organization will include all the products you need. As you can see, the second product will be marked as `INACTIVE`.
+The above contains 4 `<Product>` nodes for sake of brevity. Typically your feed will include all the products you have stored within your e-commerce platform. 
 
-Also, the second Product has as parent product the first one, we can tell that because of `<ParentID>123456789</ParentID>`.
+For a better understanding of the product hierarchy requirement, please refer to [this guide](http://9odg7y.axshare.com/home.html).
 
-## Validate your feed
+The product hierarchy is broken down into 2 levels:
+
+- Parent (Style level)
+- Child (Color level)
+
+Parent level `<Product>` will include the "summation" of the child products being included in the feed. 
+
+Child level `<Product>` will include the `<ParentID>` element to denote the Parent `<Product>` related to this product.
+
+Theoretically, you can have infinite number of levels. However, please consult your Integration Engineer on best practices on the product hierarchy required by Olapic.
+
+Note that we do not want any "size" specific product nodes unless it is a business requirement for the project.
+
+
+## Validating your feed
 By now, you should know how to build a correct feed to fully integrate with Olapic. Congratulations!
 
-Please, use the XML Schema Definition we have to validate your feed before sending it to us. You can find our schema here:
+Please use the XML Schema Definition (.xsd) we have for you to validate the feed before sending it to us. You can find our schema here:
 
 [XML Schema Definition for a valid Olapic Feed](http://photorank.me/olapicProductFeedV1_0.xsd)
 
@@ -195,6 +276,8 @@ Here some tools:
 * [CoreFiling](http://www.corefiling.com/opensource/schemaValidate.html) is an online tool that will ask your XML file and the XSD file (that you can download form above).
 * [XML Validation](http://www.xmlvalidation.com/) is an online tool that will ask you first to paste you XML code or upload it and then you must use the checkbox *"Validate against external XML schema"* and click *"validate"* to go to the next page were you'll be asked to paste your XSD or upload it.
 * xmllint (Command Line): you likely have xmllint installed on your machine, which can handle validation. In your terminal, type the following command:
+
+See below for `xmllint` usage in terminal:
 
 ```sh
 xmllint -noout --schema olapicProductFeedV1_0.xsd my_company_feed.xml
