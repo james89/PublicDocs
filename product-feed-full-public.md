@@ -60,7 +60,7 @@ You can build the `<Category>` elements using the following children elements:
 |--------------|-------------|----------|
 | Name | The visible name of the category. | **Yes** |
 | CategoryUniqueID | A unique ID for the category. <br>**Note: The value of this element can not be empty or contain white spaces.** | **Yes** |
-| CategoryUrl | A URL where visitors can shop by this category, if you have one. | Only if you use our *category_based* widget |
+| CategoryUrl | A URL where visitors can shop by this category, if you have one. **Include the full URL, with the schema(http/https)** | Only if you use our *category_based* widget |
 | CategoryParentID | This is to support sub-category levels. If the category is a sub-category with a specific parent category, please use the parent category's CategoryUniqueID within this element | Only if you need sub-category support |
 
 
@@ -94,7 +94,7 @@ Here is a list of possible elements you can use under `<Product>`. Please pay at
 |--------------|-------------|----------|
 | Name | The visible name of the product in your PDP.| **Yes** |
 | ProductUniqueID | This is the unique identifier of the product. We treat this as an *unique* key and your organization will use it to call our widgets in your PDP. ***Note: The value of this element can not be empty or contain white spaces.***| **Yes** |
-| ProductUrl | This is the URL we use when you click "Shop this look" in an Olapic viewer. This must take the visitor to a page to purchase the item | **Yes** |
+| ProductUrl | This is the URL we use when you click "Shop this look" in an Olapic viewer. This must take the visitor to a page to purchase the item. **Include the full URL, with the schema(http/https)** | **Yes** |
 | ImageUrl | This is the URL of the product primery image. The image that most represents your product in your PDP | **Yes** |
 | Description | This is a short and plain text description of the product. We use this in your Olapic Admin page, your visitors will not see it. *No HTML elements are recognized in this element*. | No |
 | CategoryID | This is the unique identifier of the category related with this product. We use this in the *category_based* Widget. <br>**Note: The value here should match the `CategoryUniqueID` of the associated `<Category>` element.** | Only if you use our *category_based* widget |
