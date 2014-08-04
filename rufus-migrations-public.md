@@ -1,5 +1,12 @@
 ---
 layout: article
+title: 
+attribution: 
+resource: true
+categories: [Resources]
+---
+
+layout: article
 title: Article moved
 attribution: 
 resource: false
