@@ -6,6 +6,13 @@ resource: true
 categories: [Resources]
 ---
 
+layout: article
+title: 
+attribution: 
+resource: true
+categories: [Resources]
+---
+
 Sorry! The requested article has been relocated. 
 
 Redirecting you to <a href="https://olapic1.zendesk.com/hc/en-us/articles/202450304">Migrating to RUFUS widget framework</a> in <span id="countdown">5</span> seconds...
