@@ -248,7 +248,7 @@ The following is an example of a valid feed you can provide.
 	</Products>
 </Feed>
 ```
-The above contains 4 `<Product>` nodes for sake of brevity. Typically your feed will include all the products you have stored within your e-commerce platform. 
+The above contains 4 `<Product>` nodes for sake of brevity. Typically your feed will include all the products you have stored within your e-commerce platform.
 
 For a better understanding of the product hierarchy requirement, please refer to [this guide](http://9odg7y.axshare.com/home.html).
 
@@ -257,7 +257,7 @@ The product hierarchy is broken down into 2 levels:
 - Parent (Style level)
 - Child (Color level)
 
-Parent level `<Product>` will include the "summation" of the child products being included in the feed. 
+Parent level `<Product>` will include the "summation" of the child products being included in the feed.
 
 Child level `<Product>` will include the `<ParentID>` element to denote the Parent `<Product>` related to this product.
 
@@ -279,7 +279,7 @@ Here some tools:
 
 * [CoreFiling](http://www.corefiling.com/opensource/schemaValidate.html) is an online tool that will ask your XML file and the XSD file (that you can download form above).
 * [XML Validation](http://www.xmlvalidation.com/) is an online tool that will ask you first to paste you XML code or upload it and then you must use the checkbox *"Validate against external XML schema"* and click *"validate"* to go to the next page were you'll be asked to paste your XSD or upload it.
-* xmllint (Command Line): you likely have xmllint installed on your machine, which can handle validation. In your terminal, type the following command:
+* `xmllint` (Command Line): you likely have xmllint installed on your machine, which can handle validation. In your terminal, type the following command:
 
 See below for `xmllint` usage in terminal:
 
@@ -287,7 +287,7 @@ See below for `xmllint` usage in terminal:
 xmllint -noout --schema olapicProductFeedV1_0.xsd my_company_feed.xml
 ```
 
-## Updating your Product Feed
+## Delivering your Product Feed
 
 To keep a good sync between your inventory and Olapic, we need to update the feed on a scheduled basis. In order to do update regularly, we import the feed on a daily basis. The time of feed import varies, however we usually schedule our jobs to run at night or early in the morning. This way, your team can update the feed in the afternoon to have the updates in Olapic the next day.
 
@@ -295,8 +295,11 @@ You can make your PF available to Olapic using one of the following options:
 
 * **SFTP Account**: Request your Integration Engineer to set up an account for your organization and then please upload your feed periodically to that account.
 * **FTP Account**: Request your Integration Engineer to set up an account for your organization and then please upload your feed periodically to that account.
+* **HTTP** Endpoint: Provide us with a URL where we can grab the feed. You can set HTTP Auth methods to secure the data if needed.
 
-We encourage you to update it daily.
+### Note: Feed update times
+
+We run our feed importer every 24 hours, scheduled between 04:00 to 10:00 UTC. There is no exact time that the feed ingestion happens, so please deliver the feed before 04:00 UTC for the most up-to-date product data in Olapic.
 
 ## Providing a custom Product Feed
 If you plan on giving us a custom feed (existing vendor feeds that are not Olapic specific), please be aware of the following:
