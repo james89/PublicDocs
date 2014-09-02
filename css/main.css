@@ -64,14 +64,11 @@ a.anchor-link {
 
 /* Replaces bootstrap brand with Olapic */
 .olapic-logo {                
-    background-image: url('/img/olapic_type_logo.png');
-    background-repeat: no-repeat;
-    background-position: center;
-     position: absolute;
-     height: 100%;
-     width: 165px;
-     top: 0;
-
+	background: url('../img/olapic_type_logo_sm.png') no-repeat center;
+	position: absolute;
+	height: 100%;
+	width: 165px;
+	top: 0;
 }
 
 /* Hide Bootstrap mobile menu */
